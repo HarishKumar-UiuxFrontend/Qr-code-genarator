@@ -1,0 +1,20 @@
+package com.service;
+
+import com.model.Batman;
+import com.model.Contra;
+import com.model.Mario;
+
+public class GameService {
+	
+	GameInterface interface1;
+	
+	public void rungame(GameInterface obj) {
+		obj.left();
+		obj.right();
+		obj.up();
+		obj.down();	
+	}
+	
+	
+
+}

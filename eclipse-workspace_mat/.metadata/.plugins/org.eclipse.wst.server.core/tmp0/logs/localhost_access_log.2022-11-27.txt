@@ -1,0 +1,12 @@
+127.0.0.1 - - [27/Nov/2022:11:52:18 +0530] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [27/Nov/2022:11:52:18 +0530] "GET /instagram/LoginHere.jsp HTTP/1.1" 200 889
+0:0:0:0:0:0:0:1 - - [27/Nov/2022:11:52:19 +0530] "GET /favicon.ico HTTP/1.1" 404 1016
+0:0:0:0:0:0:0:1 - - [27/Nov/2022:12:44:50 +0530] "GET /instagram/LoginHere.jsp HTTP/1.1" 200 889
+0:0:0:0:0:0:0:1 - - [27/Nov/2022:12:44:50 +0530] "GET /favicon.ico HTTP/1.1" 404 1016
+0:0:0:0:0:0:0:1 - - [27/Nov/2022:12:44:55 +0530] "GET /instagram/Register.jsp HTTP/1.1" 200 807
+0:0:0:0:0:0:0:1 - - [27/Nov/2022:12:45:29 +0530] "POST /instagram/InsertPage HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [27/Nov/2022:12:45:29 +0530] "GET /instagram/RegSuccess.jsp HTTP/1.1" 200 252
+0:0:0:0:0:0:0:1 - - [27/Nov/2022:12:45:30 +0530] "GET /instagram/LoginHere.jsp HTTP/1.1" 200 889
+0:0:0:0:0:0:0:1 - - [27/Nov/2022:12:45:43 +0530] "POST /instagram/ReadPage HTTP/1.1" 200 391
+0:0:0:0:0:0:0:1 - - [27/Nov/2022:12:45:58 +0530] "GET /instagram/Deactivate.jsp HTTP/1.1" 200 423
+0:0:0:0:0:0:0:1 - - [27/Nov/2022:12:46:03 +0530] "POST /instagram/DeletePage HTTP/1.1" 200 266

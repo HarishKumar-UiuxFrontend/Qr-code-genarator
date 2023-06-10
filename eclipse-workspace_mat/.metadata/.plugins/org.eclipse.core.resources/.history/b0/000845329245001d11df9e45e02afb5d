@@ -1,0 +1,318 @@
+package com.main;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.stream.Collectors;
+
+public class Practice {
+
+	public static boolean isPrime(int num) {
+		for (int i = 2; i <= num / 2; i++) {
+			if (num % i == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter the operation");
+		int n = scanner.nextInt();
+
+		switch (n) {
+		case 1:
+			// fibonacci series
+			int first = 0;
+			int second = 1;
+			int tot;
+			System.out.println(first);
+			System.out.println(second);
+			for (int i = 2; i <= 10; i++) {
+				tot = first + second;
+				System.out.println(tot);
+				first = second;
+				second = tot;
+			}
+			break;
+
+		case 2:
+			// prime number
+			System.out.println("Enter the number");
+			int num = scanner.nextInt();
+			for (int i = 2; i <= num; i++) {
+				if (isPrime(i)) {
+					System.out.println(i);
+				}
+			}
+			break;
+
+		case 3:
+			// String palindrome
+			System.out.println("Enter the word");
+			String name = scanner.next();
+			char[] ch = name.toCharArray();
+			String rev = "";
+			for (int i = ch.length - 1; i >= 0; i--) {
+				rev += ch[i];
+			}
+			if (rev.equals(name)) {
+				System.out.println("Is palindrome");
+			} else {
+				System.out.println("Nope");
+			}
+			break;
+
+		case 4:
+			// Integer palinndrome
+			int r, sum = 0;
+			int numer = 454;
+
+			int temp = numer;
+			while (numer > 0) {
+				r = numer % 10;
+				numer = numer / 10;
+				sum = (sum * 10) + r;
+			}
+			if (temp == sum)
+				System.out.println("palindrome number ");
+			else
+				System.out.println("not palindrome");
+			break;
+
+		case 5:
+			// reverse string
+			System.out.println("Enter the word");
+			String type = scanner.next();
+			String dummy = "";
+			char[] ch1 = type.toCharArray();
+			for (int i = ch1.length - 1; i >= 0; i--) {
+				dummy += ch1[i];
+			}
+			System.out.println(dummy);
+			break;
+
+		case 6:
+			// factorial
+			int fact = 1;
+			for (int i = 1; i <= 5; i++) {
+				fact = fact * i;
+			}
+			System.out.println(fact);
+			break;
+
+		case 7:
+			// sequence of missing numbers
+			int[] missing = { 1, 3, 7, 9 };
+			int z = 1;
+			String store = "";
+			for (int i = 0; i < missing.length; i++) {
+				if (missing[i] != z) {
+					store += z + " ";
+					i = i - 1;
+				}
+				z++;
+			}
+			System.out.println(store);
+			break;
+
+		case 8:
+			// seperate unique numbers
+			List<Integer> list = Arrays.asList(10, 23, 45, 10, 45, 89, 23, 52, 41, 63, 45);
+			Set<Integer> set = new HashSet<>();
+			list.stream().filter(x -> !set.add(x)).collect(Collectors.toSet()).forEach(x -> System.out.println(x));
+			break;
+
+		case 9:
+			// count of odd numbers * sum of odd numbers
+			int count = 0;
+			for (int i = 1; i <= 100; i = i + 2) {
+				count = count + 1;
+			}
+			System.out.println(count);
+			break;
+
+		case 10:
+			// missing letters
+			char[] dup = { 'a', 'b', 'f', 'i', 'j' };
+			char c = 'a';
+			String str = "";
+			for (int i = 0; i < dup.length; i++) {
+				if (dup[i] != c) {
+					str += c+" ";
+					i = i - 1;
+				}
+				c++;
+			}
+			System.out.println(str);
+			break;
+
+		case 11:
+			// reverse number
+			int rev1 = 0, rem;
+			int nums = 12321;
+			while (nums != 0) {
+				rem = nums % 10;
+				nums = nums / 10;
+				rev1 = (rev1 * 10) + rem;		
+			}
+			System.out.println(rev1);		
+			break;
+
+		case 12:
+			// sorting by Ascending
+			int[] sort = { 56, 40, 38, 89, 74, 21, 36, 12, 99 };
+			int dum = 0;
+			for (int i = 0; i < sort.length; i++) {
+				for (int j = i + 1; j < sort.length; j++) {
+					if (sort[i] > sort[j]) {
+						dum = sort[i];
+						sort[i] = sort[j];
+						sort[j] = dum;
+					}
+				}
+				System.out.println(sort[i]);
+			}
+			break;
+
+		case 13:
+			//sorting by Descending
+			int[] sorts = { 56, 40, 38, 89, 74, 21, 99, 12, 36 };
+			int dumm = 0;
+			for (int i = 0; i < sorts.length; i++) {
+				for (int j = i + 1; j < sorts.length; j++) {
+					if (sorts[i] < sorts[j]) {
+						dum = sorts[i];
+						sorts[i] = sorts[j];
+						sorts[j] = dumm;
+					}
+				}
+				System.out.println(sorts[i]);
+			}
+			break;
+			
+		case 14:
+			// first and second largest
+			int[] big = {300,250,400,150,100,390,560,75,210};
+			int lar = 0;
+			int sec = 0;
+			for (int i = 0; i < big.length; i++) {
+				for (int j = i+1; j < big.length; j++) {
+					if(big[i]<big[j]) {
+						sec = big[i];
+						big[i] = big[j];
+						big[j] = sec;
+					}
+				}
+				lar = big[0];
+				sec = big[1];
+			}
+			System.out.println(lar+ " "+ sec);
+			break;
+			
+		case 15:
+			// Array of even numbers
+			System.out.println("Enter the size");
+			int fixed = scanner.nextInt();
+			int[] eve = new int[(fixed/2)];
+			int k = 0;
+			for (int i = 0; i < fixed; i=i+2) {
+				eve[k] = i;
+				k++;
+			}
+			for (int i : eve) {
+				System.out.println(i);
+			}		
+			break;
+			
+		case 16:
+			// Duplicate Integers
+			int[] numeric = {4,8,6,4,2,8,3,6,1};
+			String copy = "";
+			for (int i = 0; i < numeric.length; i++) {
+				for (int j =i+1; j < numeric.length; j++) {
+					if(numeric[i] == numeric[j]) {
+						copy += numeric[i] + " ";
+					}
+				}
+			}
+			System.out.println(copy);
+			break;
+			
+		case 17:
+			//Duplicate String
+			String[] xerox = {"mat", "vic", "kab", "puli","mat","puli"};
+			String cop = "";
+			for (int i = 0; i < xerox.length; i++) {
+				for (int j = i+1; j < xerox.length; j++) {
+					if(xerox[i].equalsIgnoreCase(xerox[j])) {
+						cop += xerox[j] + " ";
+					}
+				}
+			}
+			System.out.println(cop);
+			break;
+			
+		case 18:
+			//Remove the dup String
+			LinkedHashSet<String> list1 = new LinkedHashSet<>();
+			list1.add("mat");  
+			list1.add("sha");  
+			list1.add("kab");  
+			list1.add("sub");
+			list1.add("puli");
+			list1.add("kab");
+			
+			for (String string : list1) {
+				System.out.println(string);
+			}
+			break;
+			
+		case 19:
+			//Arrange in alpha order
+			TreeSet<String> sets = new TreeSet<>();
+			sets.add("mat");
+			sets.add("sha");  
+			sets.add("kab");  
+			sets.add("sub");
+			sets.add("puli");
+			sets.add("kab");
+			
+			for (String string : sets) {
+				System.out.println(string);
+			}
+			break;
+			
+		case 20:
+			HashMap<Integer, String> map = new HashMap<>();
+			map.put(1, "mat");
+			map.put(2, "vic");
+			map.put(3, "sha");
+			
+			for (Entry<Integer, String> entry : map.entrySet()) {
+				System.out.println(entry.getKey()+" "+entry.getValue());			
+			}
+			break;
+			
+		case 21:
+			System.out.println("Enter the words");
+			String name1 = scanner.next();
+			String[] word = name1.split(" ");
+			String revName = "";
+			for (int i = 0; i < word.length; i++) {
+				for (int j = word[i].length()-1; j >=0; j++) {
+					revName += word[i].charAt(j);
+				}
+			}
+			System.out.println(revName);
+		}
+	}
+}

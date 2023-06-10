@@ -1,0 +1,77 @@
+package com.main;
+
+import java.util.Scanner;
+
+import com.service.PracticeService;
+
+public class PracticeMain {
+
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		PracticeService service = new PracticeService();
+		System.out.println("Enter the Operation");
+		int n = scanner.nextInt();
+
+		switch (n) {
+		case 1:
+			// sum of numbers
+			int i, temp, sum = 0;
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Enter the input");
+			int tot = sc.nextInt();
+			temp = tot;
+			while (tot > 0) {
+				int r = tot % 10;
+				sum = sum + r;
+				tot = tot / 10;
+			}
+			System.out.println("Reverse of Number is:" + sum);
+			break;
+
+		case 2:
+			//Base and Exponents
+			int result = 1;
+			System.out.println("the Exoponent is:- ");
+			int in = scanner.nextInt();
+			System.out.println("the base is:- ");
+			int base = scanner.nextInt();
+			while (in != 0) {
+				result *= base;
+				--in;
+			}
+			System.out.println("Power of Number is:" + result);
+			break;
+
+		case 3:
+			//Addition without using additon operator
+			System.out.println("num1");
+			int num1 = scanner.nextInt();
+			System.out.println("num2");
+			int num2 = scanner.nextInt();
+			System.out.println(service.addNumbers(num1, num2));
+			break;
+
+		case 4:
+			// Sum of digits in single digits
+			int a = scanner.nextInt();
+			int b = 0, c;
+
+			while (a > 10) {
+				b = 0;
+				while (a > 0) {
+					c = a % 10;
+					a = a / 10;
+					b += c;
+				}
+				if (b > 10)
+					a = b;
+//				else
+//					break;
+			}
+			System.out.println("\nSum of the digits in single digit is:" + b);
+		}
+
+	}
+
+}

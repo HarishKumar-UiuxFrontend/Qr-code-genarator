@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/apache-tomcat-8.0.36 at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="apache-tomcat-8.0.36 at localhost" name="apache-tomcat-8.0.36 at localhost" runtime-id="apache-tomcat-8.0.36" server-type="org.eclipse.jst.server.tomcat.80" server-type-id="org.eclipse.jst.server.tomcat.80" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="11">
+    <list key="modules" value0="loginpage::org.eclipse.jst.jee.server:loginpage::jst.web::3.0" value1="jdbc pro1::org.eclipse.jst.jee.server:jdbc pro1::jst.web::3.0" value2="application::org.eclipse.jst.jee.server:application::jst.web::3.1" value3="instagram::org.eclipse.jst.jee.server:instagram::jst.web::3.0" value4="BookStore::org.eclipse.jst.jee.server:BookStore::jst.web::3.0"/>
+  </server>
+</servers>

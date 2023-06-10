@@ -1,0 +1,30 @@
+package com.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.model.Batman;
+import com.model.Contra;
+import com.model.Mario;
+
+public class GameService {
+	
+	Mario mario;
+	Contra contra;
+	Batman batman;
+
+	public GameService(Mario mario,Contra contra,Batman batman) {
+		this.mario = mario;
+		this.contra = contra;
+		this.batman = batman;
+	}
+	
+	
+	public void rungame(Object obj) {
+		mario.left();
+		mario.right();
+		mario.up();
+		mario.down();
+		
+	}
+}
